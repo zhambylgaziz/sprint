@@ -1,12 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
+import Header from './assets/Header';
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Жамбыл, кашан бастаймыз?</Text>
-      </View>
+      <Header title = {'Header'} />
     );
   }
 }
