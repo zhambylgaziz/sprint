@@ -17,14 +17,14 @@ const Header =({title}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    height: 116,
-    paddingTop: 55,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative', 
-    elevation: 2
+    // flex: 1,
+    // height: 116,
+    // paddingTop: 55,
+    // backgroundColor: '#fff',
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    // position: 'relative', 
+    // elevation: 2
   },
 });
 //export
