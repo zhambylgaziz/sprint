@@ -1,17 +1,67 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
-export default class Catalog extends React.Component {
-	render(){
-		return(
-			<View style = { styles.container } >
-				<Text style = { styles.center } >
-					This is an catalog page 
-				</Text>
-			</View>
-		);
+import { List, ListItem } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/Ionicons'
+
+class Catalog extends React.Component {
+	
+	keyExtractor = (item, index) => index.toString()
+
+	renderItem = ({ item }) => (
+	  <ListItem
+	    title={item.name}
+	    leftIcon={
+	        <View style={styles.subtitleView}>
+	          <Icon name={item.icon} size={24} color="#808080" />
+	        </View>
+	    }
+	    onPress={()=>this.props.navigation.push(item.page)}
+	  />
+	)
+
+	render () {
+	  return (
+	    <View style={styles.container}>
+		    <FlatList
+		      keyExtractor={this.keyExtractor}
+		      data={list}
+		      renderItem={this.renderItem}
+		    />
+	    </View>
+	  )
 	}
 }
+
+const list = [
+	{
+		name: 'Продукты',
+		icon: 'ios-search',
+		page: 'Shop'
+	},
+	{
+		name: 'Детям',
+		icon: 'ios-search',
+		page: 'Shop'
+	},
+	{
+		name: 'Напитки',
+		icon: 'ios-search',
+		page: 'Shop'
+	},
+	{
+		name: 'Для дома',
+		icon: 'ios-search',
+		page: 'Shop'
+	},
+	{
+		name: 'Зоотовары',
+		icon: 'ios-search',
+		page: 'Shop'
+	}
+
+]
+
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 30,
@@ -27,3 +77,5 @@ const styles = StyleSheet.create({
   }
 
 })
+
+export default Catalog;

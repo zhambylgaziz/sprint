@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 //Screens
 import Home from './screens/Home';
-import Catalog from './screens/Catalog';
+import CatalogNav from './assets/CatalogNav';
 import Cart from './screens/Cart';
 import Settings from './screens/Settings';
 
@@ -25,7 +25,7 @@ export default createAppContainer(
       },
       //Catalog
       Catalog: { 
-        screen: Catalog,
+        screen: CatalogNav,
         navigationOptions: {
           tabBarLabel: 'Catalog',
           tabBarIcon: ({ tintColor }) =>(
