@@ -1,33 +1,14 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Header from './assets/Header';
+
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons'
 
-export class Home extends React.Component {
-  render() {
-    return (
-      <View style = { styles.container }>
-        <Header title = {'Header'} />
-        <Text style = { styles.center }>
-          This is an home
-        </Text>
-      </View>
-    );
-  }
-}
-
-export class Settings extends React.Component {
-  render() {
-    return (
-      <View style = { styles.container }> 
-        <Text style = { styles.center } > 
-          This is an settings page  
-        </Text>
-      </View>
-    );
-  }
-}
+//Screens
+import Home from './screens/Home';
+import Catalog from './screens/Catalog';
+import Cart from './screens/Cart';
+import Settings from './screens/Settings';
 
 export default createAppContainer( 
   createBottomTabNavigator(
@@ -39,6 +20,26 @@ export default createAppContainer(
           tabBarLabel: 'Home',
           tabBarIcon: ({ tintColor }) =>(
             <Icon name="ios-home" color = { tintColor } size={24} />
+          )
+        } 
+      },
+      //Catalog
+      Catalog: { 
+        screen: Catalog,
+        navigationOptions: {
+          tabBarLabel: 'Catalog',
+          tabBarIcon: ({ tintColor }) =>(
+            <Icon name="ios-search" color = { tintColor } size={24} />
+          )
+        } 
+      },
+      //Cart
+      Cart: { 
+        screen: Cart,
+        navigationOptions: {
+          tabBarLabel: 'Cart',
+          tabBarIcon: ({ tintColor }) =>(
+            <Icon name="ios-cart" color = { tintColor } size={24} />
           )
         } 
       },
@@ -55,7 +56,7 @@ export default createAppContainer(
     },
     {
       initialRouteName: 'Home',
-      order: ['Home', 'Settings'],
+      order: ['Home', 'Catalog', 'Cart', 'Settings'],
       navigationOptions: {
         tabBarVisible: true
       },
