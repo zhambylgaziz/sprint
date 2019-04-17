@@ -37,7 +37,7 @@ const list = [
 	{
 		name: 'Продукты',
 		icon: 'ios-search',
-		page: 'Shop'
+		page: 'ShopProducts'
 	},
 	{
 		name: 'Детям',

@@ -1,15 +1,24 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import Header from '../assets/Header';
-
+import { Card, ListItem, Button, Icon } from 'react-native-elements'
 export default class Home extends React.Component {
   render() {
     return (
       <View style = { styles.container }>
-        <Header title = {'Header'} />
-        <Text style = { styles.center }>
-          This is an home
-        </Text>
+        <Card
+          title='Добро пожаловать в Sprint!'
+          image={require('../assets/img/hleb.jpg')}>
+          <Text style={{marginBottom: 10}}>
+            Делайте заказы прямо сейчас
+          </Text>
+          <Button
+            icon={<Icon name='menu' color='#ffffff' />}
+            backgroundColor='#03A9F4'
+            buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+            title='Каталог'
+          />
+        </Card>
       </View>
     );
   }
