@@ -8,7 +8,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import Home from './screens/Home';
 import CatalogNav from './assets/CatalogNav';
 import Cart from './screens/Cart';
-import Settings from './screens/Settings';
+import Settings from './screens/AppNavigator';
 
 export default createAppContainer( 
   createBottomTabNavigator(
@@ -45,7 +45,7 @@ export default createAppContainer(
       },
       //Settings
       Settings: { 
-        screen: Settings,
+        screen: AppNavigator,
         navigationOptions: {
           tabBarLabel: 'Settings',
           tabBarIcon: ({ tintColor }) =>(

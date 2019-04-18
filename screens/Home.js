@@ -8,7 +8,7 @@ export default class Home extends React.Component {
       <View style = { styles.container }>
         <Card
           title='Добро пожаловать в Sprint!'
-          image={require('../assets/img/hleb.jpg')}>
+          image={require('../assets/img/open.jpg')}>
           <Text style={{marginBottom: 10}}>
             Делайте заказы прямо сейчас
           </Text>

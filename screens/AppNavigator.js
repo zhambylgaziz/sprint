@@ -10,8 +10,7 @@ const AppNavigator = createStackNavigator({
   Login:{screen: Login},
   Register:{screen: Register},
   Feedback:{screen: Feedback},
-  About:{screen: About},
-  Home:{screen: Home},
+  About:{screen: About}
 });
 
 

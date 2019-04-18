@@ -13,7 +13,7 @@ class ShopProducts extends React.Component {
 	    title={item.name}
 	    subtitle={item.subtitle}
 	    leftAvatar={{
-	      source: item.img,
+        source: item.img && { uri: item.img },
 	      title: item.name
 	    }}
 	  />

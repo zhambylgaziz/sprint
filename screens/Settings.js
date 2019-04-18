@@ -8,10 +8,10 @@ export default class Settings extends React.Component {
         <View style={styles.container}>
     {
      list.map((item, i) => (
-             <ListItem button onPress ={()=> this.props.navigation.navigate(item.page)}
-             key={i}
-             title={item.name}
-        />
+            <ListItem button onPress ={()=> this.props.navigation.navigate(item.page)}
+              key={i}
+              title={item.name}
+            />
         ))
     }
     </View>
