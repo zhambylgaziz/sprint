@@ -7,10 +7,10 @@ export default class Login extends React.Component {
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <View style={styles.container}>
           <View style={styles.logoContainer}>
-            // <Image
-            //   style={styles.logo}
-            //   source={require('./sprint.png')}
-            //   />
+            <Image
+              style={styles.logo}
+              source={require('./sprint.png')}
+              />
             <Text style={styles.title}>Зайдите для покупок</Text>
           </View>
               <View style={styles.formContainer}>
