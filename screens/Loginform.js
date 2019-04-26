@@ -1,31 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput,
 TouchableOpacity, StatusBar, Alert } from 'react-native';
-import {withNavigation} from 'react-navigation';
 import * as firebase from 'firebase';
 export default class Loginform extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      email: "Email",
-      password: "password",
-      isAuthenticationReady: false,
-      isAuthenticated: false,
+      email: "bainur@gas.com",
+      password: "bainur",
     };
-    firebase.auth().onAuthStateChanged(this.onAuthStateChanged);
-  };
-
-  onAuthStateChanged = (user) => {
-    this.setState({isAuthenticationReady: true});
-    this.setState({isAuthenticated: !!user});
   }
   submit(){
     firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-    .then(()=>{ }, (error) => Alert.alert(error.message) )
-    if (this.state.isAuthenticated){
-      ()=> this.props.navigation.navigate('Register')
-      Alert.alert('zaregan')
-    }
+    .then((user)=>{ }, (error) => Alert.alert(error.message))
   }
   render() {
     return (
