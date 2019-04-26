@@ -9,6 +9,7 @@ import Home from './screens/Home';
 import CatalogNav from './assets/CatalogNav';
 import Cart from './screens/Cart';
 import Settings from './screens/AppNavigator';
+import Settings2 from './Settings2'
 
 export default createAppContainer( 
   createBottomTabNavigator(
@@ -45,7 +46,7 @@ export default createAppContainer(
       },
       //Settings
       Settings: { 
-        screen: AppNavigator,
+        screen: Settings2,
         navigationOptions: {
           tabBarLabel: 'Settings',
           tabBarIcon: ({ tintColor }) =>(
