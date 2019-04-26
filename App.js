@@ -8,8 +8,9 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import Home from './screens/Home';
 import CatalogNav from './assets/CatalogNav';
 import Cart from './screens/Cart';
-import Settings from './screens/AppNavigator';
-import Settings2 from './Settings2'
+
+import Settings2 from './screens/Settings2'
+
 
 export default createAppContainer( 
   createBottomTabNavigator(
