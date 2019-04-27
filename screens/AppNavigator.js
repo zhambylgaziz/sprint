@@ -1,4 +1,5 @@
-import { createStackNavigator, createSwitchNavigator,  createAppContainer } from 'react-navigation';
+import { createStackNavigator, createSwitchNavigator, createAppContainer  } from 'react-navigation';
+import React, { Component } from 'react';
 import Login from './Login'
 import Register from './Register'
 import Feedback from './Feedback'
@@ -8,9 +9,11 @@ import PersonalPage from './PersonalPage'
 import Settings from './Settings'
 //import Settings2 from './Settings2'
 
-export default class App extends React.Component{
+export default class App extends React.Component {
   render() {
-    return <App/>;
+    return (
+      <App2/>
+    );
   }
 }
 
@@ -28,4 +31,24 @@ const AppNavigator = createStackNavigator({
 }
 );
 
-const App = createAppContainer(AppNavigator);
+const App2 = createAppContainer(AppNavigator);
+//
+// const Nav = createStackNavigator({
+//   PersonalPage: {screen: PersonalPage},
+// })
+//
+// const Settings3 = createStackNavigator({
+//   Settings2: {screen: Settings2},
+// })
+//
+// const App = createSwitchNavigator({
+//   Settings3: Settings3,
+//   AppNavigator: AppNavigator,
+//   Nav: Nav,
+// },
+// {
+//   initialRouteName: 'Settings3'
+// }
+// )
+
+// export default App;
