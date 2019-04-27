@@ -10,16 +10,6 @@ import CatalogNav from './assets/CatalogNav';
 import Cart from './screens/Cart';
 import Settings2 from './screens/Settings2'
 
-var config = {
-    apiKey: "AIzaSyDzTMFHGS_IUfqea_twqglO19KJji9rg20",
-    authDomain: "sprint-bje.firebaseapp.com",
-    databaseURL: "https://sprint-bje.firebaseio.com",
-    projectId: "sprint-bje",
-    storageBucket: "sprint-bje.appspot.com",
-    messagingSenderId: "45478792417"
-  };
-    firebase.initializeApp(config);
-
 export default createAppContainer( 
   createBottomTabNavigator(
     {
