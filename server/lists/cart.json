@@ -1,0 +1,96 @@
+{
+  "user": [
+    {
+      "id": 14,
+      "name": "Пюре 'Фруто Няня'",
+      "img": "../assets/img/fruto.jpg",
+      "subtitle": "Пюре десерт Фруто Няня Яблоко, банан, клубника для детей 90г - 280тг",
+      "price": 280,
+      "quantity": "1",
+      "category": "kids"
+    },
+    {
+      "id": 30,
+      "name": "Мыло SAFEGUARD Классическое",
+      "img": ",../assets/img/safeguard.jpg",
+      "subtitle": "Мыло кусковое SAFEGUARD Классическое 90г - 200тг",
+      "price": 200,
+      "quantity": 1,
+      "category": "home"
+    },
+    {
+      "id": 31,
+      "name": "Губка \"Фрекен Бок\" 5шт",
+      "img": "../assets/img/gubka.jpg",
+      "subtitle": "Губка \"Фрекен Бок\" Max двойной эффект 5шт - 450тг",
+      "price": 450,
+      "quantity": 1,
+      "category": "home"
+    },
+    {
+      "id": 32,
+      "name": "Скребок ",
+      "img": "../assets/img/skreb.jpg",
+      "subtitle": "Скребок \"Фрекен Бок\" Нержавеющий 1шт - 200тг",
+      "price": 200,
+      "quantity": "1",
+      "category": "home"
+    },
+    {
+      "id": 1,
+      "name": "Аксай нан",
+      "img": "../assets/img/hleb.jpg",
+      "subtitle": "Хлеб 'Аксай нан' Формовой 1шт - 80тг",
+      "price": 80,
+      "quantity": 1,
+      "category": "products"
+    },
+    {
+      "id": 2,
+      "name": "Масло подсолнечное \"Маслозавод №1\"",
+      "img": "../assets/img/maslo.jpg",
+      "subtitle": "Масло подсолнечное \"Маслозавод №1\" 1л\n - 540тг",
+      "price": 540,
+      "quantity": 1,
+      "category": "products"
+    },
+    {
+      "id": 3,
+      "name": "Молоко Простоквашино' 3,2%",
+      "img": "../assets/img/moloko.jpg",
+      "subtitle": "Молоко 'Простоквашино' 3,2% 1л - 520тг",
+      "price": 520,
+      "quantity": 1,
+      "category": "products"
+    },
+    {
+      "id": 4,
+      "name": "\"Аксай нан\" Бородинский",
+      "img": "../assets/img/borodinski.jpg",
+      "subtitle": "Хлеб \"Аксай нан\" Бородинский - 85тг",
+      "price": 85,
+      "quantity": 1,
+      "category": "products"
+    },
+    {
+      "id": 6,
+      "name": "Raffaello Конфеты",
+      "img": "../assets/img/voda.jpg",
+      "subtitle": "Конфеты 'Raffaello' 150гр - 1600тг",
+      "price": 1600,
+      "quantity": 1,
+      "category": "products"
+    },
+    {
+      "id": 7,
+      "name": "Лапша гречневая ",
+      "img": "../assets/img/soba.png",
+      "subtitle": "Лапша гречневая \"Sen Soy Premium\" Soba, 300гр - 800тг",
+      "price": 800,
+      "quantity": 1,
+      "category": "products"
+    }
+  ],
+  "john": [],
+  "k": []
+}

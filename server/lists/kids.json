@@ -1,0 +1,92 @@
+[
+    {
+      "id": 10,
+      "name": "NAN Optipro 3",
+      "img": ",../assets/img/nan.jpg",
+      "subtitle": "Смесь молочная NAN Optipro 3 для детей 400г - 3100тг",
+      "price": 3100,
+      "quantity": 1,
+      "category": "kids"
+    },
+    {
+      "id": 11,
+      "name": "Пюре 'Gerber'",
+      "img": "../assets/img/gerber.jpg",
+      "subtitle": "Пюре 'Gerber' Спагетти с цыплёнком 125гр - 550тг",
+      "price": 550,
+      "quantity": 1,
+      "category": "kids"
+    },
+    {
+      "id": 12,
+      "name": "Пюре детское 'Heinz'",
+      "img": "../assets/img/heinz.jpg",
+      "subtitle": "Пюре детское «Heinz» Цветная капуста, 80 гр - 350тг",
+      "price": 350,
+      "quantity": 1,
+      "category": "kids"
+    },
+    {
+      "id": 13,
+      "name": "'Агуша' Груша",
+      "img": "../assets/img/agusha.jpg",
+      "subtitle": "Пюре 'Агуша' Груша пауч, 90г - 290тг",
+      "price": 290,
+      "quantity": 1,
+      "category": "kids"
+    },
+    {
+      "id": 14,
+      "name": "Пюре 'Фруто Няня'",
+      "img": "../assets/img/fruto.jpg",
+      "subtitle": "Пюре десерт Фруто Няня Яблоко, банан, клубника для детей 90г - 280тг",
+      "price": 280,
+      "quantity": 1,
+      "category": "kids"
+    },
+    {
+      "id": 15,
+      "name": "'Nestle' Каша Овсяная",
+      "img": "../assets/img/nestle.jpg",
+      "subtitle": "Каша молочная \"Nestle\" Овсяная, 200г - 700тг",
+      "price": 700,
+      "quantity": 1,
+      "category": "kids"
+    },
+  {
+      "id": 16,
+      "name": "Каша 'Fleur Alpine'",
+      "img": ",../assets/img/fleur.jpg",
+      "subtitle": "Каша молочная 'Fleur Alpine' Organic Альпийский вечер с 6 месяцев, 200г - 1800тг",
+      "price": 1800,
+      "quantity": 1,
+      "category": "kids"
+    },
+    {
+      "id": 17,
+      "name": "Сок 'Агуша' Яблоко",
+      "img": "../assets/img/agushasok.jpg",
+      "subtitle": "Сок 'Агуша' Яблоко осветленный, 150мл - 200тг",
+      "price": 200,
+      "quantity": 1,
+      "category": "kids"
+    },
+    {
+      "id": 18,
+      "name": "Сок 'Агуша' Груша",
+      "img": "../assets/img/grusha.png",
+      "subtitle": "Сок 'Агуша' Груша осветленный, 500мл - 300тг",
+      "price": 300,
+      "quantity": 1,
+      "category": "kids"
+    },
+    {
+      "id": 19,
+      "name": "Вода детская 'Fleur Alpine'",
+      "img": "../assets/img/vodaalpine.png",
+      "subtitle": "Вода детская 'Fleur Alpine' Природная родниковая с рождения, 1л - 670тг",
+      "price": 670,
+      "quantity": 1,
+      "category": "kids"
+    }
+]
