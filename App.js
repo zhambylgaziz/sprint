@@ -5,7 +5,6 @@ import * as firebase from 'firebase'
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons'
 
-//Screens
 import Home from './screens/Home';
 import CatalogNav from './assets/CatalogNav';
 import Cart from './screens/Cart';

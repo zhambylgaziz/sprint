@@ -10,6 +10,7 @@ export default class Login extends React.Component {
             <Image
               style={styles.logo}
               source={require('../assets/sprint.png')}
+              // source={require('./sprint.png')}
               />
             <Text style={styles.title}>Зайдите для покупок</Text>
           </View>
