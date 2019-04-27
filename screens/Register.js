@@ -2,14 +2,12 @@ import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button, KeyboardAvoidingView, Alert } from 'react-native'
 import * as firebase from 'firebase'
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import AppNavigator from './AppNavigator'
 export default class Register extends React.Component {
+
   state = { email: '', password: '', errorMessage: null }
 handleSignUp = () => {
   firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-  .then(()=> {
-      () => this.props.navigator.goBack() //('Settings')
-  }, (error) => {Alert.alert(error.message)} );
+  .then(()=> {}, (error) => {Alert.alert(error.message)} );
 }
 render() {
     return (
@@ -35,9 +33,9 @@ render() {
           onChangeText={password => this.setState({ password })}
           value={this.state.password}
         />
-        <Button title="Sign Up" onPress={this.handleSignUp} />
+        <Button title="Зарегистрироваться" onPress={this.handleSignUp} />
         <Button
-          title="Already have an account? Login"
+          title="Нет аккаунта? Зарегистрируйся!"
           onPress={() => this.props.navigation.navigate('Login')}
         />
       </View>

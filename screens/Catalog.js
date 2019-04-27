@@ -5,7 +5,9 @@ import { List, ListItem } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons'
 
 class Catalog extends React.Component {
-	
+	static navigationOptions = {
+    	title: 'Каталог',
+  	};
 	keyExtractor = (item, index) => index.toString()
 
 	renderItem = ({ item }) => (
@@ -22,11 +24,12 @@ class Catalog extends React.Component {
 
 	render () {
 	  return (
-	    <View style={styles.container}>
+	    <View style={styles.list}>
 		    <FlatList
 		      keyExtractor={this.keyExtractor}
 		      data={list}
 		      renderItem={this.renderItem}
+		      showsHorizontalScrollIndicator={false}
 		    />
 	    </View>
 	  )
@@ -42,22 +45,22 @@ const list = [
 	{
 		name: 'Детям',
 		icon: 'ios-search',
-		page: 'Shop'
+		page: 'ShopKids'
 	},
 	{
 		name: 'Напитки',
 		icon: 'ios-search',
-		page: 'Shop'
+		page: 'ShopDrinks'
 	},
 	{
 		name: 'Для дома',
 		icon: 'ios-search',
-		page: 'Shop'
+		page: 'ShopHome'
 	},
 	{
 		name: 'Зоотовары',
 		icon: 'ios-search',
-		page: 'Shop'
+		page: 'ShopZoo'
 	}
 
 ]
@@ -66,6 +69,9 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 30,
     paddingVertical: 30
+  },
+  list: {
+    paddingVertical: 20
   },
   header: {
     fontSize: 12,

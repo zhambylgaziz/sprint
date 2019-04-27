@@ -37,10 +37,9 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'center' 
   },
-  left {
+  left: {
     fontSize: 12,
     textAlign: 'left'
-    padding: '5, string'
   }
 
 })

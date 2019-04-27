@@ -1,11 +1,14 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground  } from 'react-native';
 import Header from '../assets/Header';
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
 export default class Home extends React.Component {
+  static navigationOptions = {
+    title: 'Sprint',
+  };
   render() {
     return (
-      <View style = { styles.container }>
+      <View style={styles.container}> 
         <Card
           title='Добро пожаловать в Sprint!'
           image={require('../assets/img/open.jpg')}>
@@ -26,8 +29,8 @@ export default class Home extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 30,
-    paddingVertical: 30
+    paddingHorizontal: 20,
+    paddingVertical: 20
   },
   header: {
     fontSize: 12,

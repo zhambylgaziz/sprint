@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import * as firebase from 'firebase'
 
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -8,7 +9,17 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import Home from './screens/Home';
 import CatalogNav from './assets/CatalogNav';
 import Cart from './screens/Cart';
-import Settings from './screens/AppNavigator';
+import Settings2 from './screens/Settings2'
+
+var config = {
+    apiKey: "AIzaSyDzTMFHGS_IUfqea_twqglO19KJji9rg20",
+    authDomain: "sprint-bje.firebaseapp.com",
+    databaseURL: "https://sprint-bje.firebaseio.com",
+    projectId: "sprint-bje",
+    storageBucket: "sprint-bje.appspot.com",
+    messagingSenderId: "45478792417"
+  };
+    firebase.initializeApp(config);
 
 export default createAppContainer( 
   createBottomTabNavigator(
@@ -45,7 +56,7 @@ export default createAppContainer(
       },
       //Settings
       Settings: { 
-        screen: AppNavigator,
+        screen: Settings2,
         navigationOptions: {
           tabBarLabel: 'Settings',
           tabBarIcon: ({ tintColor }) =>(
@@ -61,7 +72,7 @@ export default createAppContainer(
         tabBarVisible: true
       },
       tabBarOptions:{
-        activeTintColor: 'red',
+        activeTintColor: '#A52D38',
         inactiveTintColor: 'grey'
       }
     }

@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, FlatList, Button } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
+import { createStackNavigator, createSwitchNavigator } from 'react-navigation';
 
-export default class Settings extends React.Component {
+export default class Settings extends React.Component{
     render() {
       return (
         <View style={styles.container}>
-    {
-     list.map((item, i) => (
-            <ListItem button onPress ={()=> this.props.navigation.navigate(item.page)}
-              key={i}
-              title={item.name}
-            />
+        {
+              list.map((item, i) => (
+             <ListItem button onPress ={()=> this.props.navigation.navigate(item.page)}
+             key={i}
+             title={item.name}
+        />
         ))
     }
     </View>
@@ -35,7 +36,11 @@ export default class Settings extends React.Component {
     {
       name: 'Отзывы',
       page: 'Feedback'
-    }
+    },
+    {
+      name: 'Контакты',
+      page: 'Contact'
+    },
   ]
   const styles = StyleSheet.create({
     container: {
