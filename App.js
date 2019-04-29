@@ -18,7 +18,7 @@ var config = {
     storageBucket: "sprint-bje.appspot.com",
     messagingSenderId: "45478792417"
   };
-    firebase.initializeApp(config);
+firebase.initializeApp(config);
 
 export default createAppContainer( 
   createBottomTabNavigator(
@@ -27,7 +27,7 @@ export default createAppContainer(
       Home: { 
         screen: Home,
         navigationOptions: {
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Sprint',
           tabBarIcon: ({ tintColor }) =>(
             <Icon name="ios-home" color = { tintColor } size={24} />
           )
@@ -37,7 +37,7 @@ export default createAppContainer(
       Catalog: { 
         screen: CatalogNav,
         navigationOptions: {
-          tabBarLabel: 'Catalog',
+          tabBarLabel: 'Каталог',
           tabBarIcon: ({ tintColor }) =>(
             <Icon name="ios-search" color = { tintColor } size={24} />
           )
@@ -47,7 +47,7 @@ export default createAppContainer(
       Cart: { 
         screen: Cart,
         navigationOptions: {
-          tabBarLabel: 'Cart',
+          tabBarLabel: 'Корзина',
           tabBarIcon: ({ tintColor }) =>(
             <Icon name="ios-cart" color = { tintColor } size={24} />
           )
@@ -57,7 +57,7 @@ export default createAppContainer(
       Settings: { 
         screen: Settings2,
         navigationOptions: {
-          tabBarLabel: 'Settings',
+          tabBarLabel: 'Еще',
           tabBarIcon: ({ tintColor }) =>(
             <Icon name="ios-settings" color = { tintColor } size={24} />
           )

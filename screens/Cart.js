@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, FlatList, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TextInput, Button, Alert } from 'react-native';
 import axios from 'axios';
-import { List, ListItem } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/Ionicons'
-// var user = firebase.auth().currentUser;
+import { List, ListItem, Header } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/Ionicons';
+import * as firebase from 'firebase';
+
 const serverUrl = 'http://192.168.1.105:5000';
 // const serverUrl = 'http://172.20.10.2:5000';
 const http = axios.create({
@@ -14,27 +15,43 @@ export default class Cart extends React.Component {
     super(props);
     this.state = {
       cart_products: [],
-      isLoggedIn: false
+      isLoggedIn: false,
     }
+    setInterval(() => (this.loadCart()), 1000);
   }
-  static navigationOptions = {
-    title: 'Корзина',
-  };
-  componentWillMount(){
-    this.loadCart();
+  checkAuth() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+          this.setState({isLoggedIn: true})
+      } else {
+          this.setState({isLoggedIn: false})
+      }
+    });
   }
   loadCart(){
-    http.post('/getCart', {username: 'user'})
+    this.checkAuth();
+    const { isLoggedIn } = this.state;
+    if (isLoggedIn){
+      const username = firebase.auth().currentUser.email;
+      if (username != "" ) {
+        http.post('/getCart', {username: username})
         .then((response) => this.setState({cart_products: response.data}))
         .catch((err) => console.log(err));
+      }
+    }else{
+      this.setState({cart_products: []})
+    }
   }
   deleteProduct(item){
-    this.loadCart();
-    // const { username } = this.state;
-    const id = item.id;
-    http.post('/deleteProduct', {id, username: 'user'})
-      .then(() => this.loadCart())
-      .catch((err) => console.log(err))
+    const { isLoggedIn, username } = this.state;
+    if (isLoggedIn) {
+      const id = item.id;
+      const username = firebase.auth().currentUser.email;
+      http.post('/deleteProduct', {id, username: username})
+        .then(() => this.loadCart())
+        .catch((err) => console.log(err))
+      }
+      this.loadCart();
   }
   keyExtractor = (item, index) => index.toString()
 
@@ -45,7 +62,7 @@ export default class Cart extends React.Component {
       subtitle={
         <View>
           <Text>{item.subtitle}</Text>
-          <Text>{item.quantity}</Text>
+          <Text>Количество: {item.quantity}</Text>
         </View>
       }
      leftAvatar={{ source: { uri: item.img } }}
@@ -59,23 +76,58 @@ export default class Cart extends React.Component {
   )
 
   render() {
+    const { isLoggedIn, cart_products } = this.state; 
+     if (isLoggedIn) {
+            return (
+            <View style={styles.main}>
+              <Header
+                statusBarProps={{ barStyle: 'light-content' }}
+                barStyle="light-content" // or directly
+                leftComponent={
+                  <Icon name="ios-cart" color = { '#fff' } size={24} />
+                }
+                centerComponent={{ text: 'Корзина', style: { color: '#fff', fontWeight: 'bold', } }}
+                containerStyle={{
+                  backgroundColor: '#A52D38',
+                  justifyContent: 'space-around',
+                  fontWeight: 'bold',
+                }}
+              />
+              <View style={styles.list}>
+                <FlatList
+                    keyExtractor={this.keyExtractor}
+                    data={cart_products}
+                    renderItem={this.renderItem}
+                    extraData={this.state}
+                  />
+              </View>
+ 
+            </View>
+          );
+        } else {
+            return (
+                <Header
+                  statusBarProps={{ barStyle: 'light-content' }}
+                  barStyle="light-content" // or directly
+                  leftComponent={
+                    <Icon name="ios-cart" color = { '#fff' } size={24} />
+                  }
+                  centerComponent={{ text: 'Корзина', style: { color: '#fff', fontWeight: 'bold', } }}
+                  containerStyle={{
+                    backgroundColor: '#A52D38',
+                    justifyContent: 'space-around',
+                    fontWeight: 'bold',
+                  }}
+                />
+            );
+        }
     
-    const { cart_products, isLoggedIn } = this.state; 
-    return (
-      <View>
-        <View style={styles.list}>
-          <FlatList
-              keyExtractor={this.keyExtractor}
-              data={cart_products}
-              renderItem={this.renderItem}
-              extraData={this.state}
-            />
-        </View>
-      </View>
-    );
   }
 }
 const styles = StyleSheet.create({
+  main:{
+    flex: 1
+  },
   container: {
     paddingHorizontal: 30,
     paddingVertical: 30
@@ -90,6 +142,16 @@ const styles = StyleSheet.create({
   center: {
     fontSize: 12,
     textAlign: 'center' 
-  }
+  },
+  footer: {
+  position: 'absolute',
+  flex:0.1,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  backgroundColor: '#A52D38',
+  height: 40,
+  alignItems:'center',
+},
 
 })

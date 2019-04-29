@@ -27,8 +27,18 @@ const AppNavigator = createStackNavigator({
   Contact:{screen: Contact},
 },
 {
-  initialRouteName: 'Settings'
-}
+  initialRouteName: 'Settings',
+  defaultNavigationOptions: {
+	      headerStyle: {
+	        backgroundColor: '#A52D38',
+	      },
+	      headerTintColor: '#fff',
+	      headerTitleStyle: {
+	        fontWeight: 'bold',
+	        fontSize: '12px',
+	      },
+	    },
+	}
 );
 
 const App2 = createAppContainer(AppNavigator);

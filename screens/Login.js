@@ -2,6 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View,Image, Button, KeyboardAvoidingView } from 'react-native';
 import Loginform from './Loginform'
 export default class Login extends React.Component {
+  static navigationOptions = {
+    title: 'Логин',
+  };
   render() {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>

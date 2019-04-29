@@ -2,6 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default class Feedback extends React.Component {
+  static navigationOptions = {
+    title: 'Отзыв',
+  };
   render() {
     return (
       <View style={styles.container}>

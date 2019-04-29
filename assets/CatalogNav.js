@@ -25,6 +25,7 @@ const CatatalogNav = createStackNavigator(
 	      headerTintColor: '#fff',
 	      headerTitleStyle: {
 	        fontWeight: 'bold',
+	        fontSize: '12px',
 	      },
 	    },
   	}

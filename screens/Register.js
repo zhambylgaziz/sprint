@@ -3,8 +3,10 @@ import { StyleSheet, Text, TextInput, View, Button, KeyboardAvoidingView, Alert 
 import * as firebase from 'firebase'
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 export default class Register extends React.Component {
-
-  state = { email: '', password: '', errorMessage: null }
+static navigationOptions = {
+  title: 'Регистрация',
+};
+state = { email: '', password: '', errorMessage: null }
 handleSignUp = () => {
   firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
   .then(()=> {}, (error) => {Alert.alert(error.message)} );
@@ -33,10 +35,19 @@ render() {
           onChangeText={password => this.setState({ password })}
           value={this.state.password}
         />
-        <Button title="Зарегистрироваться" onPress={this.handleSignUp} />
+        <Button 
+          title="Зарегистрироваться" 
+          onPress={this.handleSignUp} 
+          buttonStyle={{
+              backgroundColor: '#A52D38'
+          }}
+        />
         <Button
           title="Нет аккаунта? Зарегистрируйся!"
           onPress={() => this.props.navigation.navigate('Login')}
+          buttonStyle={{
+              backgroundColor: '#A52D38'
+            }}
         />
       </View>
       </KeyboardAvoidingView>

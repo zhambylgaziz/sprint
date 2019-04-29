@@ -16,14 +16,14 @@ export default class Settings2 extends React.Component {
   }
 
   componentDidMount() {
-        firebase.auth().onAuthStateChanged(user => {
-    if (user) {
-        this.setState({isLoggedIn: true})
-    } else {
-        this.setState({isLoggedIn: false})
-    }
-});
-}
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+          this.setState({isLoggedIn: true})
+      } else {
+          this.setState({isLoggedIn: false})
+      }
+    });
+  }
   //
   // constructor(props) {
   //     super(props);

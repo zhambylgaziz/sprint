@@ -6,8 +6,10 @@ export default class Loginform extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      email: "bainur@gas.com",
-      password: "bainur",
+      // email: "bainur@gas.com",
+      // password: "bainur",
+      email: "",
+      password: "",
     };
   }
   submit(){
@@ -21,7 +23,7 @@ export default class Loginform extends React.Component {
             barStyle="dark-content"/>
           <TextInput style={styles.input}
           placeHolder="username or email"
-          placeHolderTextColor="white"
+          placeHolderTextColor="#FFFF31"
           returnKeyType="next"
           keyBoardType="email-address"
           autoCapitalize="none"
@@ -32,7 +34,7 @@ export default class Loginform extends React.Component {
           />
           <TextInput style={styles.input}
           placeHolder="password"
-          placeHolderTextColor="white"
+          placeHolderTextColor="#FFFF31"
           secureTextEntry
           returnKeyType="go"
           style={styles.input}
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10
   },
   buttonContainer:{
-    backgroundColor: '#ffeaa7',
+    backgroundColor: '#A52D38',
     paddingVertical: 15
   },
   buttonText: {
