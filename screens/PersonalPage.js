@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, FlatList, Button, Image } from 'react-native';
 import { List, ListItem, Header } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
-
+import axios from 'axios';
 import * as firebase from 'firebase'
- 
+const serverUrl = 'http://192.168.1.106:5000';
+const http = axios.create({
+  baseURL: serverUrl,
+});
 export default class PersonalPage extends React.Component {
   signOutUser = async () => {
       try {
@@ -13,7 +16,12 @@ export default class PersonalPage extends React.Component {
           console.log(e);
       }
   }
- 
+  get_user(){
+    const username = firebase.auth().currentUser.email;
+    http.post('/getUser', {username: username})
+        .then((response) => console.log(response.data))
+        .catch((err) => console.log(err));  
+  }
     render() {
       const username = firebase.auth().currentUser.email;
       return (

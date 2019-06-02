@@ -5,7 +5,7 @@ import { List, ListItem, Header } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 import * as firebase from 'firebase';
 
-const serverUrl = 'http://192.168.1.105:5000';
+const serverUrl = 'http://192.168.1.106:5000';
 // const serverUrl = 'http://172.20.10.2:5000';
 const http = axios.create({
   baseURL: serverUrl,
@@ -35,7 +35,7 @@ export default class Cart extends React.Component {
       const username = firebase.auth().currentUser.email;
       if (username != "" ) {
         http.post('/getCart', {username: username})
-        .then((response) => this.setState({cart_products: response.data}))
+        .then((response) => this.setState({cart_products: response.data.cart}))
         .catch((err) => console.log(err));
       }
     }else{
@@ -77,8 +77,8 @@ export default class Cart extends React.Component {
 
   render() {
     const { isLoggedIn, cart_products } = this.state; 
-     if (isLoggedIn) {
-            return (
+    if (isLoggedIn) {
+      return (
             <View style={styles.main}>
               <Header
                 statusBarProps={{ barStyle: 'light-content' }}
@@ -144,14 +144,13 @@ const styles = StyleSheet.create({
     textAlign: 'center' 
   },
   footer: {
-  position: 'absolute',
-  flex:0.1,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  backgroundColor: '#A52D38',
-  height: 40,
-  alignItems:'center',
-},
-
+    position: 'absolute',
+    flex:0.1,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: '#A52D38',
+    height: 40,
+    alignItems:'center',
+  },
 })
