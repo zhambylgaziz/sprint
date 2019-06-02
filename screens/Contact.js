@@ -1,48 +1,58 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,ScrollView,Image } from 'react-native';
 
-export default class Catalog extends React.Component {
+export default class Contact extends React.Component {
   static navigationOptions = {
     title: 'Контакты',
   };
   render() {
     return (
-      <View style = { styles.container } > 
-        <Text> 
-          Sprint dev
+      <ScrollView>
+      <View style={styles.container}>
+      <View style={styles.logoContainer}>
+         <Image
+           style={styles.logo}
+           source={require('../assets/sprint.png')}
+           />
+       </View>
+        <Text style={styles.container}>
+            Наши контакты для дальнейшего содрудничества вы можете найти здесь.
         </Text>
-        <Text style = { styles.left }>
-          Kelsingazin Yerassyl
-          8(777)2579952
+        <Text style={styles.container}>Газиз Жамбыл: Разработчик. 87029461245
         </Text>
-        <Text style = { styles.left }>
-          Kenges Bainur
-          8(702)9933227
+        <Text style={styles.container}>Кенес Байнур: хуипинатель лучший в своем деле. 87476214569
         </Text>
-        <Text style = { styles.left }>
-          Gaziz Zhambyl
-          8(700)0881551
+        <Text style={styles.container}>Келсингазин Ерасыл: Главный всех главных, Ник Фьюри нашей команды.
         </Text>
       </View>
+      </ScrollView>
     );
   }
 }
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 30,
-    paddingVertical: 30
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: 15,
+    fontFamily: 'AvenirNext-Regular'
   },
-  header: {
-    fontSize: 12,
-    fontFamily: 'Cochin'
-  },
-  center: {
-    fontSize: 12,
-    textAlign: 'center' 
-  },
-  left: {
-    fontSize: 12,
-    textAlign: 'left'
-  }
-
-})
+  logo:{
+  width: 200,
+  height: 200
+},
+title:{
+  color: 'black',
+  marginTop: 10,
+  width: 160,
+  textAlign: 'center',
+  opacity: 0.9
+},
+logoContainer:{
+  alignItems: 'center',
+  flexGrow: 1,
+  justifyContent: 'center',
+  marginBottom: 5
+}
+});

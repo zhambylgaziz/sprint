@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1834ac94-79d3-4a75-beed-bba41d75e518" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/agusha.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/agushasok.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/ariel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/bel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/borodinski.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/buratino.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/chappi600.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/choco.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/coca025.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/coca05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/dizzy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/dobryi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/domestos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/fleur.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/fruto.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gerber.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/glade.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/grusha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gubka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/heinz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/hleb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/home-repeat.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/home.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/home2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/lactel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/lipton05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/maslo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/moloko.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/nan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/nature.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/nestle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/open.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/pedigree600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/pepsi1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/persilvernel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/safeguard.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/schweppes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/scrab.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/skreb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/soba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/sous.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/sprite05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/tassai.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/tea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/tide.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/tvorog.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/vitaminc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/voda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/vodaalpine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/whiskas350.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/zewa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lists/drinks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lists/home.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lists/kids.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lists/products.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lists/zoo.json" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screens/Home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1258">
+              <caret line="107" column="10" selection-start-line="107" selection-start-column="10" selection-end-line="107" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screens/Shop/ShopDrinks.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-799">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/screens/Home.js" />
+        <option value="$PROJECT_DIR$/App.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="50" />
+    <option name="width" value="1346" />
+    <option name="height" value="698" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="sprint" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sprint" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sprint" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sprint" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sprint" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sprint" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+              <item name="Shop" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1834ac94-79d3-4a75-beed-bba41d75e518" name="Default Changelist" comment="" />
+      <created>1559064944181</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559064944181</updated>
+      <workItem from="1559064949992" duration="112000" />
+      <workItem from="1559066620695" duration="1926000" />
+      <workItem from="1559106391654" duration="4225000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="6263000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32850242" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.47181964" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/screens/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="107" column="10" selection-start-line="107" selection-start-column="10" selection-end-line="107" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Shop/ShopHome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1297">
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Shop/ShopDrinks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-799">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
