@@ -22,6 +22,9 @@ export default class PersonalPage extends React.Component {
         .then((response) => console.log(response.data))
         .catch((err) => console.log(err));  
   }
+  componentDidMount() {
+    get_user()
+  }
     render() {
       const username = firebase.auth().currentUser.email;
       return (

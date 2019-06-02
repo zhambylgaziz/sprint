@@ -39,27 +39,27 @@ class Catalog extends React.Component {
 const list = [
 	{
 		name: 'Продукты',
-		icon: 'ios-search',
+		icon: 'shoppingcart',
 		page: 'ShopProducts'
 	},
 	{
 		name: 'Детям',
-		icon: 'ios-search',
+		icon: 'hearto',
 		page: 'ShopKids'
 	},
 	{
 		name: 'Напитки',
-		icon: 'ios-search',
+		icon: 'rest',
 		page: 'ShopDrinks'
 	},
 	{
 		name: 'Для дома',
-		icon: 'ios-search',
+		icon: 'home',
 		page: 'ShopHome'
 	},
 	{
 		name: 'Зоотовары',
-		icon: 'ios-search',
+		icon: 'yuque',
 		page: 'ShopZoo'
 	}
 

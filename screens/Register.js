@@ -8,8 +8,14 @@ static navigationOptions = {
 };
 state = { email: '', password: '', errorMessage: null }
 handleSignUp = () => {
+  get_user(this.state.email);
   firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
   .then(()=> {}, (error) => {Alert.alert(error.message)} );
+}
+get_user(username){
+  http.post('/getUser', {username: username})
+      .then((response) => console.log(response.data))
+      .catch((err) => console.log(err));  
 }
 render() {
     return (

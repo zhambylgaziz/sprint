@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, FlatList, TextInput, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Button, Alert, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import { List, ListItem, Header } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -16,6 +16,7 @@ export default class Cart extends React.Component {
     this.state = {
       cart_products: [],
       isLoggedIn: false,
+      total: 0
     }
     setInterval(() => (this.loadCart()), 1000);
   }
@@ -35,7 +36,7 @@ export default class Cart extends React.Component {
       const username = firebase.auth().currentUser.email;
       if (username != "" ) {
         http.post('/getCart', {username: username})
-        .then((response) => this.setState({cart_products: response.data.cart}))
+        .then((response) => this.setState({cart_products: response.data.cart, total: response.data.total}))
         .catch((err) => console.log(err));
       }
     }else{
@@ -76,7 +77,7 @@ export default class Cart extends React.Component {
   )
 
   render() {
-    const { isLoggedIn, cart_products } = this.state; 
+    const { isLoggedIn, cart_products, total } = this.state; 
     if (isLoggedIn) {
       return (
             <View style={styles.main}>
@@ -101,7 +102,18 @@ export default class Cart extends React.Component {
                     extraData={this.state}
                   />
               </View>
- 
+              <View style={styles.footer}>
+                <View style={styles.half}>
+                <TouchableOpacity style={styles.buttonContainer}
+                  onPress={() => this.submit()}>
+                    <Text style={styles.buttonText}>Оплата</Text>
+                </TouchableOpacity>
+                </View>
+                <View style={styles.half}>
+                  <Text>Тотал: {total}</Text>
+                </View>
+              </View>
+             
             </View>
           );
         } else {
@@ -149,8 +161,18 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: '#A52D38',
     height: 40,
     alignItems:'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  },
+  half: {
+    width: '50%'
+  },
+  buttonContainer:{
+    backgroundColor: '#A52D38',
+    paddingVertical: 15,
+    width: '100%',
+    height: '100%'
   },
 })
