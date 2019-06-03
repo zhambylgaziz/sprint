@@ -1,129 +1,123 @@
-import React from 'react'
-import { StyleSheet, Text, TextInput, View, Button, KeyboardAvoidingView, Alert,ScrollView, TouchableOpacity } from 'react-native'
-import * as firebase from 'firebase'
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import React from 'react';
+import { StyleSheet, Text, View, Button, TextInput,
+TouchableOpacity, StatusBar, Alert } from 'react-native';
+import * as firebase from 'firebase';
+import axios from 'axios';
+const serverUrl = 'http://192.168.1.104:5000';
+const http = axios.create({
+  baseURL: serverUrl,
+});
 export default class Adress extends React.Component {
-static navigationOptions = {
-  title: 'Адрес',
-};
-
-state = {
-  address: '',
-  street: '',
-  city: '',
-  apart: '',
-  home: '',
-  name:'',
-  phone: ''
-}
-
-  save = () => {
-
+  constructor(props){
+    super(props);
+    this.state = {
+      city: "Almaty",
+      name: "",
+      phone: "",
+      street: "",
+      home: "",
+      apart: ""
+    };
   }
-
-render() {
+  submit(){
+      const { city, name, phone, street, home, apart } = this.state;
+      const username = firebase.auth().currentUser.email;
+      if( name == "" || phone == "" || street == "" || home == ""){
+        Alert.alert("Заполните все поля: (ФИО, Номер телефона, Улица, Дом)")
+      }else{
+        http.post('/addAddres', {
+          username: username, name: name, phone: phone, street: street, home: home, apart: apart })
+        .catch((err) => console.log(err))
+      }  
+  }
+  render() {
     return (
-      <KeyboardAvoidingView behavior="padding" style={styles.cont} enabled>
-      <ScrollView>
-      <View style={styles.container}>
-        <Text>Добавьте ваш адрес доставки продуктов</Text>
-        {this.state.errorMessage &&
-          <Text style={{ color: 'red' }}>
-            {this.state.errorMessage}
-          </Text>}
-        <TextInput
-          placeholder="Контактное имя"
+        <View style={styles.container}>
+          <StatusBar
+            barStyle="dark-content"/>
+          <TextInput style={styles.input}
+          placeHolder="ФИО"
+          placeHolderTextColor="#FFFF31"
+          returnKeyType="next"
+          keyBoardType="default"
           autoCapitalize="none"
-          style={styles.textInput}
-          onChangeText={name => this.setState({ name })}
-          value={this.state.name}
-        />
-        <TextInput
-          placeholder="Номер телефона"
+          autoCorrect={false}
+          onSubmitEditing={() => this.passwordInput.focus()}
+          onChangeText={(text) => this.setState({name: text})}
+          style={styles.input}
+          />
+          <TextInput style={styles.input}
+          placeHolder="Номер телефона"
+          placeHolderTextColor="#FFFF31"
+          returnKeyType="next"
+          keyBoardType="default"
           autoCapitalize="none"
-          style={styles.textInput}
-          onChangeText={phone => this.setState({ phone })}
-          value={this.state.phone}
-        />
-        <TextInput
-
-          placeholder="Город"
+          autoCorrect={false}
+          onSubmitEditing={() => this.passwordInput.focus()}
+          onChangeText={(text) => this.setState({phone: text})}
+          style={styles.input}
+          />
+          <TextInput style={styles.input}
+          placeHolder="Улица"
+          placeHolderTextColor="#FFFF31"
+          returnKeyType="next"
+          keyBoardType="default"
           autoCapitalize="none"
-          style={styles.textInput}
-          onChangeText={city => this.setState({ city })}
-          value={this.state.city}
-        />
-        <TextInput
-
-          placeholder="Улица"
+          autoCorrect={false}
+          onSubmitEditing={() => this.passwordInput.focus()}
+          onChangeText={(text) => this.setState({street: text})}
+          style={styles.input}
+          />
+          <TextInput style={styles.input}
+          placeHolder="Дом"
+          placeHolderTextColor="#FFFF31"
+          returnKeyType="next"
+          keyBoardType="default"
           autoCapitalize="none"
-          style={styles.textInput}
-          onChangeText={street => this.setState({ street })}
-          value={this.state.street}
-        />
-        <TextInput
-
-          placeholder="Дом"
+          autoCorrect={false}
+          onSubmitEditing={() => this.passwordInput.focus()}
+          onChangeText={(text) => this.setState({home: text})}
+          style={styles.input}
+          />
+          <TextInput style={styles.input}
+          placeHolder="Квартира"
+          placeHolderTextColor="#FFFF31"
+          returnKeyType="next"
+          keyBoardType="default"
           autoCapitalize="none"
-          style={styles.textInput}
-          onChangeText={home => this.setState({ home  })}
-          value={this.state.home}
-        />
-        <TextInput
-          placeholder="Квартира"
-          autoCapitalize="none"
-          style={styles.textInput}
-          onChangeText={apart => this.setState({ apart  })}
-          value={this.state.apart}
-        />
-        <View style={styles.bt}>
-        <TouchableOpacity style={styles.buttonContainer}
-        onPress={() => this.signOutUser()}>
-          <Text style={styles.buttonText}>Сохранить</Text>
-        </TouchableOpacity>
+          autoCorrect={false}
+          onSubmitEditing={() => this.passwordInput.focus()}
+          onChangeText={(text) => this.setState({apart: text})}
+          style={styles.input}
+          />
+          <TouchableOpacity style={styles.buttonContainer}
+          onPress={() => this.submit()}>
+            <Text style={styles.buttonText}>Добавить</Text>
+          </TouchableOpacity>
         </View>
-      </View>
-      </ScrollView>
-      </KeyboardAvoidingView>
-    )
+    );
   }
 }
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontSize: 20,
-    marginTop: 10,
-    paddingHorizontal: 10,
-    paddingVertical: 10,
+    padding: 20
   },
-  bt: {
-    marginTop: 30,
-    justifyContent:'flex-end',
-    marginBottom: 10,
-    flex: 1
+  input: {
+    height: 48,
+    backgroundColor: '#ffeaa7',
+    marginBottom: 20,
+    color: 'white',
+    paddingHorizontal: 10
   },
   buttonContainer:{
     backgroundColor: '#A52D38',
-    paddingVertical: 15,
-    paddingHorizontal: 75,
-    textAlign: 'center',
-    marginBottom: 5
+    paddingVertical: 15
   },
   buttonText: {
     textAlign: 'center',
     color: 'white',
     fontWeight: '700'
-  },
-  cont: {
-    flex: 1,
-  },
-  textInput: {
-    height: 40,
-    width: '90%',
-    borderBottomColor: '#A52D38',
-    borderBottomWidth: 1,
-    marginTop: 10
   }
-})
+
+});

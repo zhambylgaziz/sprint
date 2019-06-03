@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import * as firebase from 'firebase';
 
 // const serverUrl = 'http://172.20.10.2:5000';
-const serverUrl = 'http://192.168.1.106:5000';
+const serverUrl = 'http://192.168.1.104:5000';
 const http = axios.create({
   baseURL: serverUrl,
 });

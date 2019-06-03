@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, FlatList, Button, Alert, TouchableOpacity } from 'react-native';
+import { Card, CardItem, Body } from "native-base";
 import axios from 'axios';
 import { List, ListItem, Header } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 import * as firebase from 'firebase';
 
-const serverUrl = 'http://192.168.1.106:5000';
+const serverUrl = 'http://192.168.1.104:5000';
 // const serverUrl = 'http://172.20.10.2:5000';
 const http = axios.create({
   baseURL: serverUrl,
@@ -14,11 +15,16 @@ export default class MakeOrder extends React.Component {
    constructor(props) {
     super(props);
     this.state = {
+      user: "",
       cart_products: [],
       isLoggedIn: false,
       total: 0
     }
-    setInterval(() => (this.loadCart()), 1000);
+    // setInterval(() => (this.loadCart()), 1000);
+  }
+  
+  componentDidMount() {
+    get_user()
   }
   checkAuth() {
     firebase.auth().onAuthStateChanged(user => {
@@ -29,31 +35,24 @@ export default class MakeOrder extends React.Component {
       }
     });
   }
+  get_user(){
+    const username = firebase.auth().currentUser.email;
+    http.post('/getUser', {username: username})
+        .then((response) => this.setState({user: response.data}))
+        .catch((err) => console.log(err));  
+  }
   loadCart(){
-    this.checkAuth();
-    const { isLoggedIn } = this.state;
-    if (isLoggedIn){
       const username = firebase.auth().currentUser.email;
       if (username != "" ) {
         http.post('/getCart', {username: username})
         .then((response) => this.setState({cart_products: response.data.cart, total: response.data.total}))
         .catch((err) => console.log(err));
       }
-    }else{
-      this.setState({cart_products: []})
-    }
   }
-  deleteProduct(item){
-    const { isLoggedIn, username } = this.state;
-    if (isLoggedIn) {
-      const id = item.id;
-      const username = firebase.auth().currentUser.email;
-      http.post('/deleteProduct', {id, username: username})
-        .then(() => this.loadCart())
-        .catch((err) => console.log(err))
-      }
-      this.loadCart();
+  makeOrder(){
+
   }
+
   keyExtractor = (item, index) => index.toString()
 
   renderItem = ({ item }) => (
@@ -77,9 +76,8 @@ export default class MakeOrder extends React.Component {
   )
 
   render() {
-    const { isLoggedIn, cart_products, total } = this.state; 
-    if (isLoggedIn) {
-      return (
+    const { user, cart_products, total } = this.state; 
+    return (
             <View style={styles.main}>
               <Header
                 statusBarProps={{ barStyle: 'light-content' }}
@@ -87,25 +85,36 @@ export default class MakeOrder extends React.Component {
                 leftComponent={
                   <Icon name="ios-cart" color = { '#fff' } size={24} />
                 }
-                centerComponent={{ text: 'Корзина', style: { color: '#fff', fontWeight: 'bold', } }}
+                centerComponent={{ text: 'Оплата', style: { color: '#fff', fontWeight: 'bold', } }}
                 containerStyle={{
                   backgroundColor: '#A52D38',
                   justifyContent: 'space-around',
                   fontWeight: 'bold',
                 }}
               />
-              <View style={styles.list}>
-                <FlatList
-                    keyExtractor={this.keyExtractor}
-                    data={cart_products}
-                    renderItem={this.renderItem}
-                    extraData={this.state}
-                  />
-              </View>
+              <Card>
+                <CardItem header bordered>
+                  <Text>NativeBase</Text>
+                </CardItem>
+                <CardItem bordered>
+                  <Body>
+                    <Text>
+                      NativeBase is a free and open source framework that enable
+                      developers to build
+                      high-quality mobile apps using React Native iOS and Android
+                      apps
+                      with a fusion of ES6.
+                    </Text>
+                  </Body>
+                </CardItem>
+                <CardItem footer bordered>
+                  <Text>GeekyAnts</Text>
+                </CardItem>
+              </Card>
               <View style={styles.footer}>
                 <View style={styles.half}>
                 <TouchableOpacity style={styles.buttonContainer}
-                  onPress={() => this.submit()}>
+                  onPress={() => this.makeOrder()}>
                     <Text style={styles.buttonText}>Оплата</Text>
                 </TouchableOpacity>
                 </View>
@@ -113,27 +122,9 @@ export default class MakeOrder extends React.Component {
                   <Text>Тотал: {total}</Text>
                 </View>
               </View>
-             
             </View>
           );
-        } else {
-            return (
-                <Header
-                  statusBarProps={{ barStyle: 'light-content' }}
-                  barStyle="light-content" // or directly
-                  leftComponent={
-                    <Icon name="ios-cart" color = { '#fff' } size={24} />
-                  }
-                  centerComponent={{ text: 'Корзина', style: { color: '#fff', fontWeight: 'bold', } }}
-                  containerStyle={{
-                    backgroundColor: '#A52D38',
-                    justifyContent: 'space-around',
-                    fontWeight: 'bold',
-                  }}
-                />
-            );
-        }
-    
+        
   }
 }
 const styles = StyleSheet.create({
@@ -175,4 +166,9 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%'
   },
+  buttonText: {
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: '700'
+  }
 })

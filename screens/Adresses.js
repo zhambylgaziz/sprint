@@ -15,68 +15,70 @@ class Adresses extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: "home",
-      products: [],
-      isLoggedIn: false,
+      user: [],
     };
   }
-  static navigationOptions = {
-    title: 'Для дома',
-  };
-  componentWillMount(){
-    this.loadData();
+  // static navigationOptions = {
+  //   title: 'Для дома',
+  // };
+  componentDidMount() {
+    get_user()
   }
-  loadData(){
-    const { category } = this.state;
-    http.get('/getHomeProducts')
-        .then((response) => this.setState({products: response.data}))
-        .catch((err) => console.log(err));
+  get_user(){
+    const username = firebase.auth().currentUser.email;
+    http.post('/getUser', {username: username})
+      .then((response) => this.setState({user: response.data}))
+      .catch((err) => console.log(err));  
   }
-  checkAuth() {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-          this.setState({isLoggedIn: true})
-      } else {
-          this.setState({isLoggedIn: false})
-      }
-    });
-  }
-  addToCart(item){
-    this.checkAuth();
-    const { isLoggedIn } = this.state;
-    if (isLoggedIn){
-      const username = firebase.auth().currentUser.email;
-      http.post('/addToCart', {id: item.id, username: username, category: item.category})
+  delete(address){
+    const username = firebase.auth().currentUser.email;
+    http.post('/delAddress', {username: username, address: address})
+      .then(() => this.loadCart())
       .catch((err) => console.log(err))
-    }   
+    get_user()
   }
   keyExtractor = (item, index) => index.toString()
 
   renderItem = ({ item }) => (
     <ListItem
-      title={item.name}
-      subtitle={item.subtitle}
-      leftAvatar={{ source: { uri: item.img } }}
+      title={item.address}
+      subtitle={
+        <View style={styles.subtitleView}>
+          <Text>{item.name}</Text>
+          <Text>{item.phone}</Text>
+        </View>
+      }
       rightIcon={
-        <Icon name="ios-add-circle-outline" color = { 'grey' } size={24} 
-          onPress={() => this.addToCart(item)}
+        <Icon name="ios-close" color = { 'grey' } size={24} 
+          onPress={() => this.delete(item.address)}
           underlayColor = '#ff0000'
-        />}    
+        />
+      }
+         
     />
   )
 
   render () {
-    const { products, isLoggedIn } = this.state; 
+    const { user } = this.state; 
     return (
       <View style={styles.list}>
         <View>
           <FlatList
               keyExtractor={this.keyExtractor}
-              data={products}
+              data={user.addresses}
               renderItem={this.renderItem}
               extraData={this.state}
               showsHorizontalScrollIndicator={false}
             />
+        </View>
+        <View>
+          <Button 
+            title="Добавить Адресс" 
+            onPress={} 
+            buttonStyle={{
+                backgroundColor: '#A52D38'
+            }}
+          />
         </View>
       </View>
     )
@@ -98,7 +100,12 @@ const styles = StyleSheet.create({
   center: {
     fontSize: 12,
     textAlign: 'center' 
-  }
+  },
+  subtitleView: {
+    flexDirection: 'row',
+    paddingLeft: 10,
+    paddingTop: 5
+  },
 
 })
 export default Adresses;
